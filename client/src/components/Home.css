@@ -1,0 +1,188 @@
+.home-container {
+    text-align: center;
+    color: #000;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    font-size: 24px;
+    margin: 0;
+    flex-grow: 1;
+    text-align: center;
+    color: #4e8fff; /* Blue font for title */
+}
+
+header .date-time {
+    font-size: 24px;
+    margin-top: 5px;
+}
+
+header .logout-button, header .home-button {
+    color: rgb(0, 0, 0);
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 120px; /* Add margin-top to avoid overlapping with fixed header */
+}
+
+.feedback-section, .usage-section {
+    width: 48%; /* Increased width of sections */
+    background-color: white;
+    padding: 20px; /* Increased padding */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-table, .usage-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.feedback-table th, .feedback-table td, .usage-table th, .usage-table td {
+    border: 1px solid #ddd;
+    padding: 12px; /* Increased padding */
+    text-align: left;
+    font-size: 16px; /* Increased font size */
+}
+
+.feedback-table th, .usage-table th {
+    background-color: #f2f2f2;
+    font-size: 18px; /* Increased font size for headers */
+}
+
+.monitor-report-buttons {
+    display: flex;
+    justify-content: space-between; /* Ensure buttons align with tables */
+    margin: 50px 0;
+    width: 100%;
+}
+
+.monitor-button, .report-button {
+    width: 48%; /* Align buttons with the sections */
+    padding: 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    color: rgb(0, 0, 0); /* White text color for buttons */
+    text-align: left; /* Align text to left */
+    position: relative; /* Make positioning relative for opacity effect */
+    overflow: hidden; /* Ensure content doesn't overflow */
+}
+
+.monitor-button {
+    background-image: url('../assets/m.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.7; /* Decreased opacity */
+}
+
+.report-button {
+    background-image: url('../assets/r.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.7; /* Decreased opacity */
+}
+
+.monitor-button h3, .report-button h3, .monitor-button p, .report-button p {
+    position: relative; /* Ensure text is above background image */
+    z-index: 1; /* Ensure text is above background image */
+}
+
+.monitor-button::before, .report-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7); /* White overlay with decreased opacity */
+    z-index: 0; /* Ensure overlay is above background image but below text */
+}
+
+.header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+}
+
+.logout-button,
+.notification-button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+}
+
+.notification-dot {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.notification-dropdown {
+    position: absolute;
+    right: 0;
+    top: 40px; /* Adjust this value to position dropdown correctly */
+    width: 300px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 1001;
+}
+
+.notification-dropdown h3 {
+    margin-top: 0;
+    font-size: 18px;
+}
+
+.notification-dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.notification-dropdown ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.notification-dropdown ul li:last-child {
+    border-bottom: none;
+}

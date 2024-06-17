@@ -1,0 +1,138 @@
+.report-container {
+    text-align: center;
+    color: #000;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    font-size: 24px;
+    margin: 0;
+    color: #4e8fff;
+}
+
+header .date-time {
+    font-size: 24px;
+    margin-top: 5px;
+}
+
+header .home-button, header .logout-button {
+    color: rgb(0, 0, 0);
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+}
+
+header .home-button {
+    left: 10px;
+}
+
+header .logout-button {
+    right: 10px;
+}
+
+.controls {
+    margin-top: 120px;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.controls select, .controls input, .controls .react-select__control {
+    height: 40px; /* Set a fixed height for all controls */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.date-picker-wrapper {
+    width: 200px; /* Set fixed width for the DatePicker container */
+}
+
+.fixed-width-datepicker {
+    width: 100%; /* Make sure the DatePicker input takes the full width of its container */
+    height: 40px; /* Match the height of other controls */
+}
+
+.chart-container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chart-wrapper {
+    width: 100%;
+    max-width: 600px; /* Adjust the max-width to make the chart smaller */
+    margin: 0 auto;
+}
+
+.chart {
+    position: relative;
+    margin-top: 10px;
+    width: 100%;
+    height: 350px; /* Adjust the height as needed */
+    background-color: #ffffff; /* Add white background for the chart */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .chart {
+        height: 300px; /* Adjust for smaller screens */
+    }
+}
+
+.no-data-message {
+    margin-top: 50px; /* Moves the message 50px lower */
+    font-size: 18px; /* Adjust the font size if necessary */
+    color: #000000; /* Optional: Change the color to make it stand out */
+}
+
+.problem-message {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.problem-message h2 {
+    margin: 0 0 10px 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.problem-message p {
+    margin: 5px 0;
+    font-size: 1em;
+    color: #666;
+}
+
+

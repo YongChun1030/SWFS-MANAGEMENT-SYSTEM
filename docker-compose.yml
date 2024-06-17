@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./server
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGO_URI=${MONGO_URI}
+      - TWILIO_ACCOUNT_SID=${TWILIO_ACCOUNT_SID}
+      - TWILIO_AUTH_TOKEN=${TWILIO_AUTH_TOKEN}
+      - CLEANER_PHONE_NUMBER=${CLEANER_PHONE_NUMBER}
+      - TWILIO_PHONE_NUMBER=${TWILIO_WHATSAPP_NUMBER}
+    depends_on:
+      - mongo
+
+  frontend:
+    build:
+      context: ./client
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:

@@ -1,0 +1,67 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: white;
+  text-align: center;
+}
+
+.login-container h1 {
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.gender-icons {
+  margin-bottom: 20px;
+}
+
+.gender-icons i {
+  font-size: 48px;
+  margin: 0 10px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  width: 100%;
+  max-width: 400px; /* Ensure consistent max width */
+}
+
+.form-control {
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  max-width: 500px; /* Ensure consistent max width */
+}
+
+.btn-block {
+  width: 300px; /* Ensure consistent max width */
+  background-color: #007bff;
+  border-color: #007bff;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.additional-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  width: 100%;
+  max-width: 290px; /* Ensure consistent max width */
+}
+
+.additional-links .btn-link {
+  color: white;
+  text-decoration: none;
+  padding: 5px 0;
+}
+
+.additional-links .btn-link:hover {
+  color: #d1d1d1;
+  text-decoration: underline;
+}

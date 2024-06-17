@@ -35,6 +35,7 @@ const Home: React.FC = () => {
         try {
             const feedbackResponse = await fetch('http://localhost:5000/feedbacks');
             const feedbackData = await feedbackResponse.json();
+            console.log('Feedback Data:', feedbackData);  // Add this line to log feedback data
             setFeedbacks(feedbackData);
 
             const usageResponse = await fetch('http://localhost:5000/usages');

@@ -84,25 +84,20 @@ def get_all_usages():
 def get_feedbacks():
     today = datetime.now().strftime('%Y-%m-%d')
     feedbacks = feedback_collection.find({'timestamp': {'$regex': f'^{today}'}}).sort('timestamp', -1).limit(4)
-    malaysia_tz = pytz.timezone('Asia/Kuala_Lumpur')
-
+    
     feedback_list = []
     for fb in feedbacks:
-        timestamp = fb.get('timestamp')
-        if timestamp:
-            if isinstance(timestamp, str):
-                timestamp = datetime.fromisoformat(timestamp.replace("Z", "+00:00"))
-            timestamp = timestamp.astimezone(malaysia_tz).strftime('%Y-%m-%d %H:%M:%S')
-        else:
-            timestamp = 'N/A'
-        
+        timestamp = fb.get('timestamp', 'N/A')
         feedback_list.append({
             'time': timestamp,
             'washroom': f"{fb.get('floor', 'N/A')} {fb.get('toiletType', 'UNKNOWN')}",
             'rating': fb.get('rating', 'N/A')
         })
 
+    print(feedback_list)  # Add this line to print feedback list
     return jsonify(feedback_list)
+
+
 
 @app.route('/usages', methods=['GET'])
 def get_usages():
